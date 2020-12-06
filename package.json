@@ -1,0 +1,64 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "포트폴리오를 만들다 보면 자주 사용하는 컴포넌트들이 있다. 그러한 컴포넌트를 재활용할 수 있는 방법이 없을까? 이번 세미나에서는 자신만의 디자인 시스템을 만들고 배포해보는 시간을 가져보자",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoDMsoluth/react-testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoDMsoluth/react-testing/issues"
+  },
+  "homepage": "https://github.com/JoDMsoluth/react-testing#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
+    "@babel/preset-typescript": "^7.12.7",
+    "@storybook/addon-actions": "^6.1.10",
+    "@storybook/addon-docs": "^6.1.10",
+    "@storybook/addon-essentials": "^6.1.10",
+    "@storybook/addon-info": "^5.3.21",
+    "@storybook/addon-links": "^6.1.10",
+    "@storybook/addons": "^6.1.10",
+    "@storybook/preset-typescript": "^3.0.0",
+    "@storybook/react": "^6.1.10",
+    "@storybook/storybook-deployer": "^2.8.7",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/styled-components": "^5.1.4",
+    "babel-loader": "^8.2.2",
+    "babel-preset-react-app": "^10.0.0",
+    "core-js": "^3.8.1",
+    "css-loader": "^5.0.1",
+    "rollup": "^2.34.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
+    "styled-components": "^5.2.1",
+    "typescript": "^4.1.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "sass": "^1.30.0",
+    "styled-components": "^5.2.1"
+  },
+  "dependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}

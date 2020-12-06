@@ -1,0 +1,35 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { action } from '@storybook/addon-actions';
+import Button from "./";
+
+<Meta title="Button" component={Button} />
+
+# Button Component
+
+첫번째 컴포넌트입니다.
+테마와 사이즈를 이용해서 버튼을 만들 수 있습니다.
+커스터마이징 해서 확장성을 높여보세요
+
+# Props
+
+<Props of={Button} />
+
+## Dark usage
+
+<Preview>  
+  <Story name="Dark Button">
+      <Button size="small" color="dark" onClick={action("클릭 이벤트")}>스몰</Button>
+      <Button color="dark" onClick={action("클릭 이벤트")}>미디엄</Button>
+      <Button size="large" color="dark" onClick={action("클릭 이벤트")}>라지</Button>
+  </Story>
+</Preview>
+
+## White usage
+
+<Preview>  
+  <Story name="White Button">
+      <Button size="small" color="white" onClick={action("클릭 이벤트")}>스몰</Button>
+      <Button color="white" onClick={action("클릭 이벤트")}>미디엄</Button>
+      <Button size="large" color="white" onClick={action("클릭 이벤트")}>라지</Button>
+  </Story>
+</Preview>
