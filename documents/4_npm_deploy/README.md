@@ -183,29 +183,19 @@ $ npm i -D @commitlint/cli @commitlint/config-conventional husky
 }
 ```
 
+> commitlint를 추가하는 이유는 semantic-release가 `fix:`와 `feat:` 으로 시작하는 커밋메시지에 반응하기 때문이다.
+
 <br />
 
-2. semantic-release 추가
-   
-<br />
 
-`package.json`
-```json
-{
-    "scripts": {
-        "cz": "git-cz"
-    }
-}
-```
-
-1. npm access token 발급받기
+2. npm access token 발급받기
    [토큰 발급](https://www.npmjs.com/settings/nodelab/tokens) > Generate New Token > Automation 체크 > 발급받은 토큰을 git actions secrects 변수에 추가(환경변수 명은 NPM_TOKEN)
    
    > 최종적으로 두개의 secret key를 발급 받았습니다.
 
    ![](./images/screenshot-1.png)
 
-2. package.json 수정
+3. package.json 수정
 배포할때마다 버전명이 달라져야 하므로 아래와 같이 수정
 
 ```json
@@ -214,7 +204,7 @@ $ npm i -D @commitlint/cli @commitlint/config-conventional husky
 }
 ```
 
-5. git actions yml 수정
+4. git actions yml 수정
 
 ```yml
 name: Node.js Package

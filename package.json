@@ -1,6 +1,6 @@
 {
   "name": "seminar-ui",
-  "version": "0.0.0-development",
+  "version": "0.0.0-semantically-released",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
