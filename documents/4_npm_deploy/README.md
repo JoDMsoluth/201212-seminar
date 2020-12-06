@@ -154,20 +154,58 @@ $ npm publish --access=public
 
 <br />
 
-[참고](https://github.com/semantic-release/semantic-release/blob/master/docs/recipes/github-actions.md)
+[참고](https://github.com/semantic-release/semantic-release)
+[참고](https://www.youtube.com/watch?v=iKeCt0F1XLg)
 
 <br />
 
-1. `npm i -D semantic-release`
 
-2. npm access token 발급받기
+
+1. commitlint 추가
+```bash
+$ npm i -D @commitlint/cli @commitlint/config-conventional husky
+```
+
+`package.json`
+```json
+{
+  //...
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+      "hooks": {
+          "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      }
+  }
+}
+```
+
+<br />
+
+2. semantic-release 추가
+   
+<br />
+
+`package.json`
+```json
+{
+    "scripts": {
+        "cz": "git-cz"
+    }
+}
+```
+
+1. npm access token 발급받기
    [토큰 발급](https://www.npmjs.com/settings/nodelab/tokens) > Generate New Token > Automation 체크 > 발급받은 토큰을 git actions secrects 변수에 추가(환경변수 명은 NPM_TOKEN)
    
    > 최종적으로 두개의 secret key를 발급 받았습니다.
 
    ![](./images/screenshot-1.png)
 
-3. package.json 수정
+2. package.json 수정
 배포할때마다 버전명이 달라져야 하므로 아래와 같이 수정
 
 ```json
@@ -176,7 +214,7 @@ $ npm publish --access=public
 }
 ```
 
-1. git actions yml 수정
+5. git actions yml 수정
 
 ```yml
 name: Node.js Package

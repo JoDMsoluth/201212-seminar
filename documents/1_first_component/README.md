@@ -170,3 +170,5 @@ $ npm run storybook
 0. 스토리북 세팅하기
 1. 첫번째 컴포넌트 
 2. **스토리북으로 docs작성하기** [이동하기](../2_storybook_docs/README.md)
+3. 스토리북 배포하기
+4. NPM에 배포하기

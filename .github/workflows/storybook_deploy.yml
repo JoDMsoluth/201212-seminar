@@ -5,26 +5,27 @@ on:
         branches: [master]
 
 jobs:
-    publish-gpr:
+    release:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - name: Set up Python
-              uses: actions/setup-python@v1
-              with:
-                  python-version: '3.8'
+
             - uses: actions/setup-node@v1
               with:
                   node-version: 12
                   registry-url: https://npm.pkg.github.com/
 
             - run: npm install
+
             - name: Deploy Storybook
               run: npm run deploy-storybook -- --ci
               env:
                   GH_TOKEN: JoDMsoluth:${{ secrets.GH_TOKEN }}
+            
+            - run: npm run build
+
             - name: Release
-              run: npx semantic-release
+              run: npx semantic-release --no-ci
               env:
                   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
