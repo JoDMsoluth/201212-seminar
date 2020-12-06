@@ -178,14 +178,6 @@ module.exports = {
 
 <br/><br/>
 
- ### 4. rollup 설치
-
-```bash
-  $ npm i -D rollup rollup-plugin-peer-deps-external rollup-plugin-sass rollup-plugin-typescript2 
-```
-
-<br/><br/>
-
 ## 다음으로
 0. 스토리북 세팅하기
 1. **첫번째 컴포넌트** [이동하기](../1_first_component/README.md)

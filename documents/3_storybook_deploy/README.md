@@ -30,21 +30,29 @@
    `npm run deploy-storybook`
 
 - 배포한 url로 들어가면 다음과 같이 나옵니다.
-![](./images/screenshot-1.png)
+![](./images/screenshot-2.png)
 
+<br />
+
+> 404 에러가 난다면
+> 
 > repository를 public으로 바꾸고 다시 배포해보세요.
+> 
+> 그래도 안되면
+> 
 > github > repository > settins > github pages에 있는 url로 들어가보세요
-![](./images/screenshot-3.png)
+> 
+> ![](./images/screenshot-3.png)
 
 <br /><br />
 
 - 아주 멋지게 배포된 사이트를 확인해 볼 수 있습니다.
-![](./images/screenshot-3.png)
+![](./images/screenshot-4.png)
 
 
 <br /><br />
 
-> 이제 위의 활동을 깃허브 master branch에 푸시할 때마다 배포를 자동화 해봅시다.
+> **이제 위의 활동을 깃허브 master branch에 푸시할 때마다 배포를 자동화 해봅시다.**
 
 <br /><br />
 
@@ -85,7 +93,7 @@ jobs:
             - name: Deploy Storybook
               run: npm run deploy-storybook -- --ci
               env:
-                  GH_TOKEN: JoDMsoluth:${{ secrets.GH_TOKEN }}
+                  GH_TOKEN: 여러분의 계정명:${{ secrets.GH_TOKEN }}
 ```
 
 - 여기서 중요한 부분은 마지막 부분인데 
@@ -93,7 +101,7 @@ jobs:
  name: Deploy Storybook
     run: npm run deploy-storybook -- --ci
     env:
-        GH_TOKEN: JoDMsoluth:${{ secrets.GH_TOKEN }}
+        GH_TOKEN: 여러분의 계정명:${{ secrets.GH_TOKEN }}
 ```
 git actions 에서는 환경변수를 추가할 수 있습니다. 환경변수로 github_access 토큰을 넣어주어야 합니다. 아무래도 아무나 내 깃허브에 푸시하면 안되니 당연히 엑세스 토큰이 필요하겠죠??
 
@@ -101,8 +109,20 @@ git actions 에서는 환경변수를 추가할 수 있습니다. 환경변수�
 
 - [github token 발급받기](https://github.com/settings/tokens)
 - Generate new token 클릭
-![](./images/screenshot-1.png)
+![](./images/screenshot-5.png)
 - 발급받은 토큰을 repository settings > secrets 탭에 들어가서 추가합니다. 토큰명은 GH_TOKEN으로 해주세요
-![](./images/screenshot-1.png)
+![](./images/screenshot-6.png)
 
 3. 이제 코드를 변경하고 다시 master branch에 푸시합니다.
+
+짜잔 멋지게 변경되었습니다.
+![](./images/screenshot-7.png)
+
+<br /><br />
+
+## 다음으로
+0. 스토리북 세팅하기
+1. 첫번째 컴포넌트 
+2. 스토리북으로 docs작성하기
+3. 스토리북 배포하기
+4. **NPM에 배포하기** [이동하기](../4_npm_deploy/README.md)

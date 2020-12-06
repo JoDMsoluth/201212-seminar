@@ -1,3 +1,12 @@
+
+<a href="https://jodmsoluth.github.io/201212-seminar/" rel="noopener noreferrer" target="_blank"><img src="https://img.shields.io/badge/ui-storybook-ff69b4" style="margin-right:10px" /></a>
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+ <img src="https://camo.githubusercontent.com/567e52200713e0f0c05a5238d91e1d096292b338/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f65732d362b2d627269676874677265656e2e737667" width="45" title="ES6+" style="margin: 0 10px" />
+ [![Typed with TypeScript](https://badgen.net/badge/icon/Typed?icon=typescript&label&labelColor=555555&color=blue)](https://github.com/microsoft/TypeScript)
+
+<br/>
+<br/>
+
 # 201212 웹 세미나
 
 ## 주제 : 나만의 디자인 시스템을 만들자
@@ -36,7 +45,7 @@
 
 ### CI/CD
 - CI : Git Actions
-- CD : Npm, github pages
+- CD : semantic-release, github pages
 
 <br />
 <br/>
@@ -54,8 +63,15 @@
 <br />
 <br />
 
+## 배포 URL
+- [Storybook](https://jodmsoluth.github.io/201212-seminar/)
+- [NPM](https://www.npmjs.com/package/seminar-ui)
+
+<br />
+<br />
+
 ## 참고자료
 
 - [HarveyD](https://github.com/HarveyD/react-component-library)
-- [Habr post](https://habr.com/ru/post/461439/)
 - [Velopert 리액트 디자인 시스템 구축하기 시리즈](https://velog.io/@velopert/design-system-using-typescript-and-storybook)
+- [zeke github](https://github.com/zeke/semantic-release-with-github-actions)

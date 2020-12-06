@@ -1,9 +1,15 @@
 {
-  "name": "testing",
-  "version": "1.0.0",
-  "description": "포트폴리오를 만들다 보면 자주 사용하는 컴포넌트들이 있다. 그러한 컴포넌트를 재활용할 수 있는 방법이 없을까? 이번 세미나에서는 자신만의 디자인 시스템을 만들고 배포해보는 시간을 가져보자",
-  "main": "index.js",
+  "name": "seminar-ui",
+  "version": "0.0.0-semantically-released",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "description": "2020 mash-up 동아리에서 나만의 디자인 시스템 만들기 세미나 발표자료입니다.",
   "scripts": {
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
@@ -11,20 +17,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JoDMsoluth/react-testing.git"
+    "url": "git+https://github.com/JoDMsoluth/201212-seminar.git"
   },
-  "keywords": [],
+  "keywords": [
+    "mash-up"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JoDMsoluth/react-testing/issues"
+    "url": "https://github.com/JoDMsoluth/201212-seminar/issues"
   },
-  "homepage": "https://github.com/JoDMsoluth/react-testing#readme",
+  "homepage": "https://github.com/JoDMsoluth/201212-seminar#readme",
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "^7.12.7",
     "@babel/preset-react": "^7.12.7",
     "@babel/preset-typescript": "^7.12.7",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
     "@storybook/addon-actions": "^6.1.10",
     "@storybook/addon-docs": "^6.1.10",
     "@storybook/addon-essentials": "^6.1.10",
@@ -47,6 +57,7 @@
     "rollup-plugin-typescript2": "^0.29.0",
     "sass": "^1.30.0",
     "sass-loader": "^10.1.0",
+    "semantic-release": "^17.3.0",
     "style-loader": "^2.0.0",
     "styled-components": "^5.2.1",
     "typescript": "^4.1.2"
