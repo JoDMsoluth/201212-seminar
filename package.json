@@ -12,9 +12,7 @@
     "build": "rollup -c",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy-storybook": "storybook-to-ghpages",
-    "semantic-release": "semantic-release",
-    "postinstall": "opencollective-postinstall"
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "collective": {
     "url": "https://opencollective.com/webpack"
@@ -37,12 +35,8 @@
     "@babel/preset-env": "^7.12.7",
     "@babel/preset-react": "^7.12.7",
     "@babel/preset-typescript": "^7.12.7",
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.0",
-    "@semantic-release/changelog": "github:semantic-release/changelog",
-    "@semantic-release/git": "^9.0.0",
     "@storybook/addon-actions": "^6.1.10",
     "@storybook/addon-docs": "^6.1.10",
     "@storybook/addon-essentials": "^6.1.10",
@@ -59,15 +53,12 @@
     "babel-preset-react-app": "^10.0.0",
     "core-js": "^3.8.1",
     "css-loader": "^5.0.1",
-    "husky": "^4.3.4",
-    "opencollective-postinstall": "^2.0.3",
     "rollup": "^2.34.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-sass": "^1.2.2",
     "rollup-plugin-typescript2": "^0.29.0",
     "sass": "^1.30.0",
     "sass-loader": "^10.1.0",
-    "semantic-release": "^17.3.0",
     "style-loader": "^2.0.0",
     "styled-components": "^5.2.1",
     "typescript": "^4.1.2"
@@ -81,15 +72,5 @@
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   }
 }
