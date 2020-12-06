@@ -13,7 +13,11 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "postinstall": "opencollective-postinstall"
+  },
+  "collective": {
+    "url": "https://opencollective.com/webpack"
   },
   "repository": {
     "type": "git",
@@ -56,6 +60,7 @@
     "core-js": "^3.8.1",
     "css-loader": "^5.0.1",
     "husky": "^4.3.4",
+    "opencollective-postinstall": "^2.0.3",
     "rollup": "^2.34.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-sass": "^1.2.2",
