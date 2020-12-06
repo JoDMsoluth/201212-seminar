@@ -13,13 +13,11 @@ jobs:
               with:
                   node-version: 12
                   registry-url: https://npm.pkg.github.com/
-
             - run: npm install
             - name: Deploy Storybook
               run: npm run deploy-storybook -- --ci
               env:
                   GH_TOKEN: JoDMsoluth:${{ secrets.GH_TOKEN }}
-            
             - run: npm run build
             - name: Release
               run: npx semantic-release --no-ci
