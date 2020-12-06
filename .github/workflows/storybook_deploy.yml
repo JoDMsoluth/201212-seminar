@@ -21,3 +21,8 @@ jobs:
                   GH_TOKEN: JoDMsoluth:${{ secrets.GH_TOKEN }}
             
             - run: npm run build
+            - name: Release
+              run: npx semantic-release --no-ci
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
