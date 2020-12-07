@@ -1,35 +1,60 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Preview, DocsContainer, ColorPalette, ColorItem, Typeset, ArgsTable } from '@storybook/addon-docs/blocks';
+
 import { action } from '@storybook/addon-actions';
+
+import palette from '../../utils/palette.ts';
 import Button from "./";
 
-<Meta title="Button" component={Button} />
+<Meta title="MDX/Button" component={Button} parameters={{
+    docs: {
+      container: ({ children, context }) => (
+        <DocsContainer context={context}>
+          <div style={{ border: '3px solid black', padding : "3rem 2rem" }}>{children}</div>
+        </DocsContainer>
+      )},
+  }}/>
 
 # Button Component
 
+export const Template = (args) => <Button onClick={action("클릭 이벤트")} {...args} />;
+
 첫번째 컴포넌트입니다.
-테마와 사이즈를 이용해서 버튼을 만들 수 있습니다.
+`테마`와 `사이즈`를 이용해서 버튼을 만들 수 있습니다.
 커스터마이징 해서 확장성을 높여보세요
 
 # Props
 
-<Props of={Button} />
+<ArgsTable story="Button" />
 
-## Dark usage
+# usage
 
 <Preview>  
-  <Story name="Dark Button">
-      <Button size="small" color="dark" onClick={action("클릭 이벤트")}>스몰</Button>
-      <Button color="dark" onClick={action("클릭 이벤트")}>미디엄</Button>
-      <Button size="large" color="dark" onClick={action("클릭 이벤트")}>라지</Button>
+  <Story name="Button" args={{ children: "버튼", color:"white", size: "medium" }}>
+    {Template.bind({})}
   </Story>
 </Preview>
 
-## White usage
 
-<Preview>  
-  <Story name="White Button">
-      <Button size="small" color="white" onClick={action("클릭 이벤트")}>스몰</Button>
-      <Button color="white" onClick={action("클릭 이벤트")}>미디엄</Button>
-      <Button size="large" color="white" onClick={action("클릭 이벤트")}>라지</Button>
-  </Story>
-</Preview>
+
+# Description
+
+버튼의 `색상`과 `폰트`에 대한 설명입니다.
+
+<br />
+
+## Theme Palette
+
+<ColorPalette>
+  <ColorItem
+    title="button color"
+    subtitle="palette"
+    colors={Object.keys(palette).map(color => palette[color])}
+  />
+</ColorPalette>
+
+## Text Size
+
+**Font**: Inter
+**Weight**: 900
+
+<Typeset fontFamily="Inter" fontSizes={[10, 20, 30]} fontWeight={900} />

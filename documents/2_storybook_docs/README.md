@@ -1,12 +1,40 @@
 # 스토리북 문서 작성하기
 
-- `src/components/Button/Button.stories.tsx` 파일처럼 우리가 여러가지 addon으로 스토리북을 작성했습니다. 하지만 저는 mdx를 이용해서 스토리북을 작성하는 것을 선호하는데요. 그 이유는 짱짱 편하기 때문입니다.
+`src/components/Button/Button.stories.tsx` 파일처럼 우리가 여러가지 addon을 사용하여 CSF 방식으로 스토리북을 작성했습니다. 하지만 저는 mdx를 이용해서 스토리북을 작성하는 것을 선호하는데요. 그 이유는 짱짱 편하기 때문입니다.
 
 <br />
 
-우선 `src/components/Button/Button.stories.mdx`파일을 작성해줍니다.
+MDX를 사용하기 위에서는 약간의 설정이 필요합니다.
+[참고](https://www.npmjs.com/package/@storybook/addon-docs)
+
+<br />
+
+@storybook/addon-docs을 설치했고 해당 addon에 대한 main.js 설정을 추가하였기 때문에 `preview.js`만 추가하면 됩니다.
+
+<br />
+
+`./storybook/preview.js`
+```javascript
+// see : https://github.com/storybookjs/storybook/tree/master/addons/docs#installation
+
+import { addParameters } from '@storybook/react';
+import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
+
+addParameters({
+  docs: {
+    container: DocsContainer,
+    page: DocsPage,
+  },
+});
+```
+
+<br />
+
+그 다음 `src/components/Button/Button.stories.mdx`파일을 작성해줍니다.
 
 > vscode에서 mdx extention을 깔아주면 더 이쁩니다.
+
+<br />
 
 `src/components/Button/Button.stories.mdx`
 ```jsx
@@ -47,6 +75,8 @@ import Button from "./";
 </Preview>
 
 ```
+
+<br />
 
 > 직접 확인해보세요 엄청 이쁩니다.
 

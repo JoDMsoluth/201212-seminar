@@ -1,7 +1,14 @@
 # 버튼 컴포넌트
 
 ## Button 컴포넌트
-첫번째 버튼 컴포넌트를 만들어봅시다.
+자, 이제 설정은 완료되었습니다. 이제는 첫번째 버튼 컴포넌트를 만들어봅시다. 😆😆
+
+<br />
+
+딱히 코드에 대한 설명은 하지 않겠습니다.
+각자 자신만의 코드로 버튼 컴포넌트를 만들어주세요.
+
+<br />
 
 `src/components/button/index.tsx`
 ```typescript
@@ -63,17 +70,28 @@ button {
 
 `src/components/Button/styles/buttonColor.ts`
 ```typescript
-import palette from '../../../utils/palette';
+const palette = {
+    gray0: '#F8F9FA',
+    gray1: '#F1F3F5',
+    gray2: '#E9ECEF',
+    gray3: '#DEE2E6',
+    gray4: '#CED4DA',
+    gray5: '#ADB5BD',
+    gray6: '#868E96',
+    gray7: '#495057',
+    gray8: '#343A40',
+    gray9: '#212529',
+};
 
 const colorBreakPoints = {
-    dark: `
+    white: `
         background: ${palette.gray2};
         color: ${palette.gray7};
         &:hover {
             background: ${palette.gray1};
         }
     `,
-    white: `
+    dark: `
         background: ${palette.gray6};
         color: ${palette.gray0};
         &:hover {
@@ -120,26 +138,49 @@ export const buttonSize = (key: keyof typeof sizeBreakPoints) => {
 };
 ```
 
+<br /><br />
+
 ## storybook 작성하기
-다음으로 스토리북을 작성해 봅시다
+다음으로 스토리북을 작성해 봅시다. Storybook은 크게 Component Storybook Format(CSF) 방식과 Markdown + JSX를 합친 (MDX) 방식을 사용하여 작성할 수 있습니다.
+
+<br />
+
+결국 MDX 방식이 -> CSF 방식으로 트랜스코딩 되기 때문에 서로간에 퍼포먼스 차이는 없으며 둘 다 섞어서 쓰셔도 상관 없습니다만 저는 MDX 방식을 선호합니다.
+
+<br />
+
+우선 맛보기로 CSF 방식으로 스토리북을 작성해봅니다.
+
+<br />
 
 `src/components/Button/Button.stories.tsx`
 ```typescript
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
+import { withKnobs, select } from '@storybook/addon-knobs';
 
 import Button from './';
 
-storiesOf('Button', module)
-  .add('with text', () => (
-    <Button color="dark" onClick={action("클릭 이벤트")}>Hello Button</Button>
-  ))
-  .add('with some emoji', () => (
-    <Button color="white" onClick={action("클릭 이벤트")} aria-label="so cool">
-        😀 😎 👍 💯
+export default {
+  title: 'CSF/Button', // 스토리북에서 보여질 그룹과 경로를 명시
+  component: Button, // 어떤 컴포넌트를 문서화 할지 명시
+  decorators: [withKnobs], // 애드온 적용
+   parameters: {
+     componentSubtitle: `첫번째 컴포넌트입니다.`
+  },
+};
+
+export const button = () => {
+  const size = select('size', ['small', 'medium', 'large'], 'medium');
+  const color = select('color', ['dark', 'white'], 'white');
+    return <Button color={color} size={size} onClick={action("클릭 이벤트")} aria-label="so cool">
+      😀 😎 👍 💯
     </Button>
-  ));
+}
+
+button.story = {
+  name: 'Button'
+};
 ```
 
 <br /><br />
@@ -163,6 +204,15 @@ export { Button };
 ```bash
 $ npm run storybook
 ```
+
+<br />
+
+**짜잔!** 멋진 문서가 완성되었네요.
+
+<br />
+
+![](./images/screenshot-q.png)
+
 
 <br/><br/>
 

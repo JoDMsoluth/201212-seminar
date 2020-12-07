@@ -1,9 +1,15 @@
+# npm 배포하기
+
+1. npm에 배포하기 앞서 설정을 해주어야 합니다.
+
+<br />
 
 `package.json`
 ```json
 {
   "name": "npm에 배포할 파일명(중복불가)",
-  "version": "v0.0.1", // npm에 배포할 버전명(중복불가)
+  "version": "v0.
+  0.1", // npm에 배포할 버전명(중복불가)
   "main": "lib/index.js",
   "module": "lib/index.esm.js", // 사용자가 패키지 다운받아 사용할 때 접근하는 entry파일
   "types": "lib/index.d.ts",
@@ -24,7 +30,13 @@
    
 <br/><br/>
 
-3. rollup 설정 파일 만들기
+2. rollup 설정 파일 만들기
+   
+<br /> 
+
+코드를 그대로 올릴 수는 없으니 번들링을 해주기 위해 rollup을 설정합니다. rollup은 commonjs방식 이나 esm 방식으로 만든 외부 패키지를 별도의 설정없이 번들링 해주는 장점이 있어 쉽게 사용할 수 있습니다.
+
+<br />
    
 `rollup.config.js`
 ```javascript
@@ -67,9 +79,9 @@ export default {
 
 <br/><br/>
 
-4. `npm run build`
+3. `npm run build`
 
-5. .npmignore 파일 추가
+4. .npmignore 파일 추가
    
 ```text
 # Logs
@@ -137,7 +149,7 @@ package-lock.json
 yarn.lock
 ```
    
-6. npm 배포하기
+5. npm 배포하기
 
 ```bash
 $ npm login
@@ -154,12 +166,10 @@ $ npm publish --access=public
 
 <br />
 
-[참고](https://github.com/semantic-release/semantic-release)
-[참고](https://www.youtube.com/watch?v=iKeCt0F1XLg)
+- [semantic-release](https://github.com/semantic-release/semantic-release)
+- [semantic-release youtube tutorial](https://www.youtube.com/watch?v=iKeCt0F1XLg)
 
 <br />
-
-
 
 1. commitlint 추가
 ```bash
@@ -183,13 +193,12 @@ $ npm i -D @commitlint/cli @commitlint/config-conventional husky
 }
 ```
 
-> commitlint를 추가하는 이유는 semantic-release가 `fix:`와 `feat:` 으로 시작하는 커밋메시지에 반응하기 때문이다.
+> commitlint를 추가하는 이유는 semantic-release가 `fix:`와 `feat:` 으로 시작하는 커밋메시지에 반응하여 기존 코드와의 변화를 감지하기 때문입니다.
 
 <br />
 
-
 2. npm access token 발급받기
-   [토큰 발급](https://www.npmjs.com/settings/nodelab/tokens) > Generate New Token > Automation 체크 > 발급받은 토큰을 git actions secrects 변수에 추가(환경변수 명은 NPM_TOKEN)
+   [토큰 발급](https://www.npmjs.com/settings/nodelab/tokens) > Generate New Token > Publish 체크 > 발급받은 토큰을 git actions secrects 변수에 추가(환경변수 명은 NPM_TOKEN)
    
    > 최종적으로 두개의 secret key를 발급 받았습니다.
 
@@ -218,10 +227,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - name: Set up Python
-              uses: actions/setup-python@v1
-              with:
-                  python-version: '3.8'
             - uses: actions/setup-node@v1
               with:
                   node-version: 12
@@ -232,6 +237,7 @@ jobs:
               run: npm run deploy-storybook -- --ci
               env:
                   GH_TOKEN: 여러분의 계정명:${{ secrets.GH_TOKEN }}
+            - run: npm run build
             - name: Release
               run: npx semantic-release
               env:
@@ -239,9 +245,33 @@ jobs:
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 ```
 
+<br /><br />
 
+5. git actions yml 수정
+   
+<br />
+  
+이제 깃허브에 push하면 자동으로 npm과 storybook에 배포가 완료됩니다.
 
+<br />
 
+![](./images/screenshot-3.png)
+
+<br />
+
+## 수고하셨습니다.
+이제 자신만의 디자인 시스템을 만들 수 있겠군요 <br />
+여러분들은 더 나아가 `jest`, `lintstage`, `eslint`, `prettier`를 husky에 추가하여 커밋을 할때마다 코드를 테스트할 수 있게 만들어 보는 것도 좋을 것 같습니다. 😎<br />
+또한, 자신만의 storybook 사용법을 만들어 가시는 것도 좋을 것 같아요. <br />
+감사합니다. 😁😁
+
+<br />
+<br />
+
+추가로 궁금한 점이 있으시면 언제든지 연락주세요 ... by **Jod** 🔥 <br />
+email: jodmsoluth@gmail.com <br />
+
+<br />
 
 ## 마무리
 0. 스토리북 세팅하기

@@ -1,14 +1,15 @@
 # 의존성 설치 및 세팅
-- 명령어로 의존성을 설치합니다.
+## 명령어로 의존성을 설치합니다.
   ```bash
   $ npm init -y
   ```
+
   ![](./images/screenshot-1.png)
 
-- 다음으로 `rollup`, `storybook`, `styled-component`, `sass`, `typescript`, `babel`을 설치합니다.
- >**주의점 DevDependance로 깔아야 함**
+<br /><br />
 
-<br />
+## 다음으로 `rollup`, `storybook`, `styled-component`, `sass`, `typescript`, `babel`을 설치합니다.
+ > **주의점 DevDependance로 깔아야 함**
 
   ### 0. typescript 설치
   ```bash
@@ -76,6 +77,8 @@ $ yarn add --peer react react-dom sass styled-components
 > 
 > yarn을 사용하지 않는 사람은 `dependencies`로 설치되는데 그냥 `peerDependencies`로 옮기면 된다.
 
+<br />
+
 `package.json`
 ```json
 {
@@ -98,12 +101,14 @@ $ npm i -D sass-loader style-loader css-loader
 ```
 
 ```
-  $ npx -p @storybook/cli sb init --type react
+$ npx -p @storybook/cli sb init --type react
 ```
 
 이제 `npm run storybook`을 이용해서 스토리북을 실행해봅니다. 그러면 스토리북 페이지로 이동할 수 있습니다.
 
-> .storybook 디렉터를 열으시면 main.js 라는 파일이 다음과 같이 적혀있습니다.
+<br />
+
+> .storybook 디렉토리를 열으시면 main.js 라는 파일이 다음과 같이 적혀있습니다.
 
 `.storybook/main.js`
 ```javascript
@@ -119,10 +124,12 @@ module.exports = {
 }
 ```
 
-> 다음과 같이 수정하여 scss와 typescript, storybook-addon을 설정해주세요.
+<br />
+
+> 다음으로 storybook에서 플러그인 역할을 하는 ~~addon을~~ 설치 후 scss와 typescript, storybook-addon을 설정해주세요.
 
 ```bash
-$ npm i -D @storybook/addon-actions @storybook/addon-essentials @storybook/addon-info @storybook/addon-links @storybook/addons @storybook/addon-docs
+$ npm i -D @storybook/addon-actions @storybook/addon-essentials @storybook/addon-info @storybook/addon-links @storybook/addons @storybook/addon-docs @storybook/addon-knobs
 ```
 
 `.storybook/main.js`
@@ -167,7 +174,7 @@ module.exports = {
 
 <br/><br/>
 
-> `babel-loader`로 바벨을 사용하기 때문에 babelrc 파일로 리액트와 타입스크립트 세팅을 작성해줍니다.
+> 위의 코드에서 `babel-loader`로 바벨을 사용하기 때문에 babelrc 파일로 리액트와 타입스크립트 세팅을 작성해줍니다.
 
 `.babelrc`
 ```json

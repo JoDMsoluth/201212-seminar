@@ -1,14 +1,14 @@
 import palette from '../../../utils/palette';
 
 const colorBreakPoints = {
-    dark: `
+    white: `
         background: ${palette.gray2};
         color: ${palette.gray7};
         &:hover {
             background: ${palette.gray1};
         }
     `,
-    white: `
+    dark: `
         background: ${palette.gray6};
         color: ${palette.gray0};
         &:hover {
