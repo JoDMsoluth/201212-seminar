@@ -5,7 +5,6 @@
  [![Typed with TypeScript](https://badgen.net/badge/icon/Typed?icon=typescript&label&labelColor=555555&color=blue)](https://github.com/microsoft/TypeScript)
 
 <br/>
-<br/>
 
 # 201212 웹 세미나
 
