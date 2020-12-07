@@ -137,18 +137,20 @@ $ npm i -D @storybook/addon-actions @storybook/addon-essentials @storybook/addon
 const path = require('path');
 
 module.exports = {
-    stories: ['../src/**/*.stories.@(ts|tsx|js|jsx|mdx)'],
-    addons: [
-        '@storybook/addon-actions',
-        '@storybook/addon-links',
-        {
-            name: '@storybook/addon-docs',
-            options: {
-                configureJSX: true,
-                babelOptions: {},
-                sourceLoaderOptions: null,
-            },
+  stories: ['../src/**/*.stories.@(ts|tsx|js|jsx|mdx)'],
+  addons: [
+    "@storybook/addon-actions",
+    "@storybook/addon-essentials",
+    "@storybook/addon-knobs",
+    "@storybook/addon-links",
+    {
+        name: '@storybook/addon-docs',
+        options: {
+            configureJSX: true,
+            babelOptions: {},
+            sourceLoaderOptions: null,
         },
+    },
     ],
     webpackFinal: async (config) => {
         config.module.rules.push({
@@ -169,7 +171,6 @@ module.exports = {
         return config;
     },
 };
-
 ```
 
 <br/><br/>
