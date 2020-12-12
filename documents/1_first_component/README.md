@@ -10,7 +10,7 @@
 
 <br />
 
-`src/components/button/index.tsx`
+`src/components/Button/index.tsx`
 ```typescript
 import React from 'react';
 import styled, { css as styledCss } from 'styled-components';

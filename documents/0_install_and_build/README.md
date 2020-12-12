@@ -13,7 +13,7 @@
 
   ### 0. typescript 설치
   ```bash
-  $ npm i -D @types/react @types/react-dom typescript styled-components @types/styled-components sass
+  $ npm i -D @types/react @types/react-dom typescript styled-components @types/styled-components sass react react-dom
   ```
   <br/>
 
@@ -68,7 +68,7 @@ declare module '*.mdx';
 ### 1. react, react-dom, sass, styled-components 설치
 
 ```bash
-$ npm i --save react react-dom sass styled-components
+$ npm i --save react react-dom
 # or
 $ yarn add --peer react react-dom sass styled-components
 ```
@@ -86,8 +86,6 @@ $ yarn add --peer react react-dom sass styled-components
   "peerDependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "styled-components": "^5.2.1",
-    "sass": "^1.30.0"
   }
 }
 ```
@@ -126,10 +124,10 @@ module.exports = {
 
 <br />
 
-> 다음으로 storybook에서 플러그인 역할을 하는 ~~addon을~~ 설치 후 scss와 typescript, storybook-addon을 설정해주세요.
+> 다음으로 storybook에서 플러그인 역할을 하는 addon을 설치 후 scss와 typescript, storybook-addon을 설정해주세요.
 
 ```bash
-$ npm i -D @storybook/addon-actions @storybook/addon-essentials @storybook/addon-info @storybook/addon-links @storybook/addons @storybook/addon-docs @storybook/addon-knobs
+$ npm i -D @storybook/addon-actions @storybook/addon-essentials @storybook/addon-info @storybook/addon-links @storybook/addons @storybook/addon-docs @storybook/addon-knobs babel-preset-react-app
 ```
 
 `.storybook/main.js`
@@ -175,7 +173,7 @@ module.exports = {
 
 <br/><br/>
 
-> 위의 코드에서 `babel-loader`로 바벨을 사용하기 때문에 babelrc 파일로 리액트와 타입스크립트 세팅을 작성해줍니다.
+> 위의 코드에서 `babel-loader`로 바벨을 사용하기 때문에 babel 리액트와 타입스크립트 세팅을 작성해줍니다.
 
 `.babelrc`
 ```json

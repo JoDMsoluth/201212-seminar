@@ -27,6 +27,16 @@
 ```
 3. 깃허브 repository push
 > 배포할 코드를 github repository에 올립니다.
+
+```bash
+  git init
+  git add .
+  git remote add origin 레포지토리경로
+  git commit -am "first commit"
+  git push -u origin master
+```
+
+<br />
    
 4. 스토리북 배포하기
 `npm run deploy-storybook`
