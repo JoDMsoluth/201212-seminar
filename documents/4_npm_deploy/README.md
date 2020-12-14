@@ -47,8 +47,6 @@ import path from 'path';
 import sass from 'rollup-plugin-sass';
 import commonjs from '@rollup/plugin-commonjs';
 
-import packageJson from './package.json';
-
 export default {
     input: 'src/index.tsx',
     output: [

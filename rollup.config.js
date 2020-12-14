@@ -10,7 +10,7 @@ export default {
     output: [
         {
             dir:"lib",
-            format: 'cjs',
+            format: 'cjs', // nextjs not support ecm
             sourcemapPathTransform: (relativePath) => {
               return path.relative('src', relativePath);
             },
@@ -23,7 +23,7 @@ export default {
             browser: true,
         }),
 
-        typescript({ objectHashIgnoreUnknownHack: true }),
+        typescript({ useTsconfigDeclarationDir: true }), // outpur에 dir 붙일거면 수정
         commonjs({
           include: /node_modules/,
         }),
